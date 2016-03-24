@@ -4,16 +4,19 @@ function Ticket(movie, time, age) {
   this.age = age;
 }
 
-function ticketPrice(movie, time, age) {
-  if (selectedMovie === "old-movie")
-  price = "$5";
-} if (selectedAge === "child" || selectedAge === "senior") {
-  price = "$5";
-} if (selectedTime === "matinee") {
-  price = "$5";
-} else {
-  price = "$10";
-}
+function ticketPrice(selectedMovie, selectedTime, selectedAge) {
+  if (selectedMovie === "old-movie") {
+    return "price = $5";
+  } if (new-movie && selectedAge === "child" || selectedAge === "senior") {
+      return "price = $5";
+    } if (selectedTime === "matinee") {
+      return "price = $5";
+    } else {
+      return "price = $10";
+    }
+};
+
+
 Ticket.prototype.fullTicket = function() {
   return this.movie + ", " + this.time + ", " + this.age;
 }
@@ -25,7 +28,7 @@ $(document).ready(function() {
     var selectedTime = $("select#new-time").val();
     var selectedAge = $("select#new-age").val();
     var newTicket = new Ticket(selectedMovie, selectedTime, selectedAge);
-    var price = ticketPrice(movie, time, age);
+    var price = ticketPrice(selectedMovie, selectedTime, selectedAge);
 
     $(".price").append(newTicket.fullTicket() + price);
 
