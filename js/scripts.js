@@ -16,7 +16,6 @@ function ticketPrice(selectedMovie, selectedTime, selectedAge) {
     }
 };
 
-
 Ticket.prototype.fullTicket = function() {
   return this.movie + ", " + this.time + ", " + this.age;
 }
